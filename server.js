@@ -4,7 +4,7 @@ const {Server}=require('socket.io');
 const crypto=require('crypto');
 const {spaces:template,questions,eventCards}=require('./data');
 const app=express(),server=http.createServer(app),io=new Server(server,{cors:{origin:false}});
-app.use(express.static('public'));
+app.use(express.static('.'));
 app.get('/health',(req,res)=>res.json({ok:true}));
 const rooms=new Map();
 const icons=['🩺','🧪','🦠','💊','🧬','🩹','📋','🧫','🔬','💚'];
